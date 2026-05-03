@@ -3,7 +3,7 @@ from sqlalchemy import Column, Integer, String, Boolean, Enum
 from sqlalchemy.orm import relationship
 from app.db.base import Base
 
-# Definimos los roles exactos que usarán en el sistema
+
 class RolEnum(str, enum.Enum):
     administrador = "Administrador"
     solicitante = "Solicitante"
@@ -16,8 +16,8 @@ class Usuario(Base):
     id_usuario = Column(Integer, primary_key=True, index=True)
     nombre = Column(String, nullable=False)
     correo = Column(String, unique=True, index=True)
-    contrasena = Column(String)  # Corregido: ahora coincide con el service
-    rol = Column(Enum(RolEnum))  # Corregido: usando la clase Enum real
+    contrasena = Column(String) 
+    rol = Column(Enum(RolEnum)) 
     activo = Column(Boolean, default=True)
 
     # Relaciones

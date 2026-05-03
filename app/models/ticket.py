@@ -4,7 +4,7 @@ from sqlalchemy.orm import relationship
 from datetime import datetime
 from app.db.base import Base
 
-# Definimos los estados exactos del flujo
+
 class EstadoTicketEnum(str, enum.Enum):
     solicitado = "solicitado"
     recibido = "recibido"

@@ -9,7 +9,7 @@ class Servicio(Base):
     nombre = Column(String)
     descripcion = Column(String, nullable=True)
     
-    # Faltaba esta llave foránea fundamental
+
     id_laboratorio = Column(Integer, ForeignKey("laboratorios.id_laboratorio")) 
     activo = Column(Boolean, default=True)
 

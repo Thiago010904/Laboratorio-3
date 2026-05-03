@@ -17,12 +17,12 @@ TRANSICIONES: dict[str, dict[str, list[str]]] = {
         EstadoTicketEnum.recibido:   [EstadoTicketEnum.asignado],
     },
     RolEnum.tecnico_mantenimiento: {
-        # Solo aplica sobre tickets donde id_asignado == id del técnico
+       
         EstadoTicketEnum.asignado:   [EstadoTicketEnum.en_proceso],
         EstadoTicketEnum.en_proceso: [EstadoTicketEnum.finalizado],
     },
     RolEnum.solicitante: {
-        # Solo puede cancelar su propio ticket si aún está en solicitado
+    
         EstadoTicketEnum.solicitado: [EstadoTicketEnum.cancelado],
     },
 }

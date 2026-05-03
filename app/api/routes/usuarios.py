@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 
 from app.db.database import get_db
 from app.schemas.usuario import UsuarioCreate, UsuarioOut
-from app.services.usuario_service import create_usuario
+from app.services.usuario_service import create
 from app.api.deps import require_roles
 
 
@@ -16,7 +16,7 @@ def crear_usuario(
     db: Session = Depends(get_db),
     current_user=Depends(require_roles("Administrador"))
 ):
-    return create_usuario(db, user)
+    return create(db, user)
 
 
 @router.get("/me", response_model=UsuarioOut)

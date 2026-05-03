@@ -11,7 +11,7 @@ class TicketCreate(BaseModel):
  
 class TicketUpdateEstado(BaseModel):
     estado:      EstadoTicketEnum
-    id_asignado: Optional[int] = None   # obligatorio solo al pasar a "asignado"
+    id_asignado: Optional[int] = None 
  
  
 class TicketOut(BaseModel):

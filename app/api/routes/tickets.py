@@ -52,7 +52,7 @@ def cambiar_estado(
     if not ticket:
         raise HTTPException(404, "Ticket no encontrado")
 
-    # 🔥 reglas clave
+    
     if user.rol == "Tecnico_Mantenimiento":
         if ticket.id_asignado != user.id_usuario:
             raise HTTPException(403, "No puedes modificar este ticket")
